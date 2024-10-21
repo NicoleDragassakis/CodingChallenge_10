@@ -2,21 +2,26 @@
 
 //TASK TWO
 //adding event listener to selector dropdown
-const productSelector = document.getElementById('productSelector'); //references the HTML element though ID on javascrpit
-const productPrice = document.getElementById('price'); //references the HTML element though ID on javascrpit
-productSelector.addEventListener('change', function(){
-const selectedPrice = productSelector.value; //displays prices based on which product is selected an its matching value
-productPrice.textContent=`$${selectedPrice}`; 
-});
+const priceElement = document.getElementById("product-price"); // references the HTML element through ID on JavaScript
+const sizeSelector = document.getElementById("size-selector"); // references the HTML element through ID on JavaScript
+sizeSelector.addEventListener("change", (event) => {
+    const selectedPrice = event.target.value; 
+    priceElement.textContent = `$${selectedPrice}`;
 
-//Task THREE
-const purchaseButton= document.getElementById('purchaseButton');
-productSelector.addEventListener('change', function() {
-    const selectedOption=productSelector.options[optionSelector.selectedIndex];
+//TASK THREE
+const purchaseButton = document.getElementById('purchase-button');
+const selectedOption = sizeSelector.options[sizeSelector.selectedIndex];
     const stockStatus = selectedOption.getAttribute('data-stock');
-    if(stockStatus === 'in-stock'){
-        purchaseButton.disabled= false;
-    } else{
-        purchaseButton.disabled= true;
+    purchaseButton.disabled = stockStatus === 'out-of-stock';
+});
+//Task four
+purchaseButton.addEventListener('click', function() {
+    const selectedOption = sizeSelector.options[sizeSelector.selectedIndex];
+    const stockStatus = selectedOption.getAttribute('data-stock');
+
+    if (stockStatus === 'in-stock') {
+        alert('Thank you for your purchase, your order has been confirmed.');
+    } else {
+        alert('Sorry, this product is out of stock.');
     }
 });

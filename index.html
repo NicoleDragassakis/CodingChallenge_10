@@ -1,13 +1,27 @@
-<h1>Coding Challenge 10</h1> <!--coding challenge title-->
-<!--TASK ONE-->
-<h2> Repairing Lip Oils</h2> <!--Product name-->
-    <p id="price">$6.99</p>
-        <select id="productSelector"><!--product selector-->
-            <option value="6.99" data-stock="in-stock">Single</option>
-            <option value="12.99"data-stock="in-stock">Double</option>
-            <option value="18.99"data-stock="no-stock">Triple</option>
-        </select>    
-        <button id="purchaseButton" disabled>Purchase</button>
-<script src="main.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coding Challenge 10</title>
+</head>
+
+<body>
+    <!--TASK ONE-->
+    <h2 id="product-name">Repairing Lip Oils</h2> <!--Product name-->
+
+    <p id="product-price">$6.99</p>
+
+    <select id="size-selector">
+        <option value="6.99" data-stock="in-stock">Single - $6.99</option>
+        <option value="12.99" data-stock="in-stock">Double - $12.99</option>
+        <option value="18.99" data-stock="out-of-stock">Triple - $18.99</option>
+    </select>
+    
+    <button id="purchase-button" disabled>Purchase</button>
+    
+    <script src="main.js"></script>
 </body>
+
 </html>
